@@ -2,8 +2,8 @@ name: 3D Contribution Calendar
 
 on:
   schedule:
-    - cron: "0 18 * * *"   # runs daily at midnight IST (18:30 UTC)
-  workflow_dispatch:        # allow manual trigger
+    - cron: "0 18 * * *"   # daily at midnight IST
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,38 +13,43 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Write settings JSON
+        run: |
+          mkdir -p profile-3d-contrib
+          cat > /tmp/settings.json << 'EOF'
+          {
+            "gitHubUserName": "ShreyasKhandare",
+            "type": "north-star",
+            "commonSettings": {
+              "darkScheme": true,
+              "fileName": "profile-night-rainbow.svg",
+              "width": 1280,
+              "height": 626
+            },
+            "northStarSettings": {
+              "darkScheme": true,
+              "backgroundColor": "#0d1117",
+              "weekLabelColor": "#8b949e",
+              "monthLabelColor": "#8b949e",
+              "branchColor": "#58a6ff",
+              "commitColor": "#58a6ff",
+              "mergeCommitColor": "#3fb950",
+              "openIssueColor": "#3fb950",
+              "closedIssueColor": "#8957e5",
+              "openPullRequestColor": "#58a6ff",
+              "mergedPullRequestColor": "#8957e5",
+              "closedPullRequestColor": "#f85149"
+            }
+          }
+          EOF
+
       - name: Generate 3D contribution graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ShreyasKhandare
           MAX_REPOS: 10
-          SETTING_JSON: |
-            {
-              "gitHubUserName": "ShreyasKhandare",
-              "type": "north-star",
-              "commonSettings": {
-                "darkScheme": true,
-                "isForcedAnimation": false,
-                "fileName": "profile-night-rainbow.svg",
-                "width": 1280,
-                "height": 626
-              },
-              "northStarSettings": {
-                "darkScheme": true,
-                "backgroundColor": "#0d1117",
-                "weekLabelColor": "#8b949e",
-                "monthLabelColor": "#8b949e",
-                "branchColor": "#58a6ff",
-                "commitColor": "#58a6ff",
-                "mergeCommitColor": "#3fb950",
-                "openIssueColor": "#3fb950",
-                "closedIssueColor": "#8957e5",
-                "openPullRequestColor": "#58a6ff",
-                "mergedPullRequestColor": "#8957e5",
-                "closedPullRequestColor": "#f85149"
-              }
-            }
+          SETTING_JSON: /tmp/settings.json
 
       - name: Commit & push updated SVG
         uses: actions-js/push@master
