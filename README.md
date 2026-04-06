@@ -129,7 +129,7 @@ shreyas = {
 
 <div align="center">
 
-<img src="profile-3d-contrib/profile-3d.svg" alt="3D Contribution Calendar" width="100%" />
+<img src="profile-3d-contrib/profile-customize.svg" alt="3D Contribution Calendar" width="100%" />
 
 > *Updating daily via GitHub Actions · Each bar = a day of commits*
 
