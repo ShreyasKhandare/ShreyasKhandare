@@ -1,25 +1,48 @@
-# Hi there, I'm Shreyas Khandare 👋
+# Hi, I'm Shreyas Khandare 👋
 
-### AI Engineer · Python · TypeScript · LangChain · FastAPI
+> I ship production AI systems. FinOps Sentinel demonstrates RAG + multi-agent orchestration at production scale — not a tutorial project.
 
-- 🧠 Building multi-agent RAG systems
-- 📊 FinTech compliance AI: Faithfulness 1.0 (+38.9% over baseline)
-- 🌐 Full-stack: FastAPI + React + Three.js
+**AI/LLM Engineer** · MS CS @ Florida State University · Based in Tallahassee, FL (Open to Remote)
 
 ---
 
-### Tech Stack
+## 🛠 Tech Stack
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+**Core:** LangChain · LangGraph · ChromaDB · FastAPI · Streamlit · Python · RAG · Multi-Agent AI
 
----
+**Secondary:** C# · ASP.NET · SQL Server · JavaScript · TypeScript · SharePoint · Git
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ShreyasKhandare&show_icons=true&theme=github_dark&hide_border=true)
+**Currently Learning:** MCP servers · Fine-tuning · Multimodal LLMs
 
 ---
 
-*"First, solve the problem. Then, write the code."*
+## 🚀 Flagship Project
+
+### [FinOps Sentinel](https://github.com/ShreyasKhandare/finops-sentinel) — LangGraph Multi-Agent Compliance RAG
+
+- **Live demo:** [shreyas-finops-sentinel.streamlit.app](https://shreyas-finops-sentinel.streamlit.app)
+- Production RAG pipeline with 413 document chunks, RAGAS score 1.0000
+- Multi-agent orchestration with LangGraph, ChromaDB, FastAPI, Streamlit
+- Designed for FinTech / RegTech compliance use cases
+
+---
+
+## 📊 What I'm Building
+
+| Project | Status | Stack |
+|---|---|---|
+| FinOps Sentinel | Active | LangGraph, ChromaDB, FastAPI |
+| Portfolio Website | In Progress | React, TypeScript, Vite |
+| Automation System | Active | Python, Telegram, n8n |
+
+---
+
+## 🎯 What I'm Looking For
+
+AI Engineer · LLM Engineer · ML Engineer · GenAI Engineer · AI/ML Software Engineer · Applied AI Engineer roles in FinTech · RegTech · AI-native startups · Compliance Tech
+
+📧 shreyas.khandare@outlook.com · 💼 [LinkedIn](https://linkedin.com/in/shreyas-khandare) · 🌐 [Portfolio](https://shreyaskhandare.dev)
+
+---
+
+*🤖 Profile last updated: April 06, 2026*
