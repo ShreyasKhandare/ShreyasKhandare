@@ -5,6 +5,9 @@ on:
     - cron: "0 18 * * *"   # daily at midnight IST
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,7 +25,7 @@ jobs:
             "type": "north-star",
             "commonSettings": {
               "darkScheme": true,
-              "fileName": "profile-night-rainbow.svg",
+              "fileName": "profile-3d.svg",
               "width": 1280,
               "height": 626
             },
@@ -52,9 +55,9 @@ jobs:
           SETTING_JSON: /tmp/settings.json
 
       - name: Commit & push updated SVG
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: "chore: update 3D contribution calendar [skip ci]"
-          directory: profile-3d-contrib
-          branch: main
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add profile-3d-contrib/
+          git diff --staged --quiet && echo "Nothing to commit" || git commit -m "chore: update 3D contribution calendar [skip ci]"
+          git push
