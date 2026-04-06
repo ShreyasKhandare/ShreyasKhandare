@@ -1,0 +1,55 @@
+name: 3D Contribution Calendar
+
+on:
+  schedule:
+    - cron: "0 18 * * *"   # runs daily at midnight IST (18:30 UTC)
+  workflow_dispatch:        # allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Generate 3D contribution calendar
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate 3D contribution graph
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ShreyasKhandare
+          MAX_REPOS: 10
+          SETTING_JSON: |
+            {
+              "gitHubUserName": "ShreyasKhandare",
+              "type": "north-star",
+              "commonSettings": {
+                "darkScheme": true,
+                "isForcedAnimation": false,
+                "fileName": "profile-night-rainbow.svg",
+                "width": 1280,
+                "height": 626
+              },
+              "northStarSettings": {
+                "darkScheme": true,
+                "backgroundColor": "#0d1117",
+                "weekLabelColor": "#8b949e",
+                "monthLabelColor": "#8b949e",
+                "branchColor": "#58a6ff",
+                "commitColor": "#58a6ff",
+                "mergeCommitColor": "#3fb950",
+                "openIssueColor": "#3fb950",
+                "closedIssueColor": "#8957e5",
+                "openPullRequestColor": "#58a6ff",
+                "mergedPullRequestColor": "#8957e5",
+                "closedPullRequestColor": "#f85149"
+              }
+            }
+
+      - name: Commit & push updated SVG
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "chore: update 3D contribution calendar [skip ci]"
+          directory: profile-3d-contrib
+          branch: main
