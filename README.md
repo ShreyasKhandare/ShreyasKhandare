@@ -45,4 +45,4 @@ AI Engineer · LLM Engineer · ML Engineer · GenAI Engineer · AI/ML Software E
 
 ---
 
-*🤖 Profile last updated: May 30, 2026*
+*🤖 Profile last updated: May 31, 2026*
